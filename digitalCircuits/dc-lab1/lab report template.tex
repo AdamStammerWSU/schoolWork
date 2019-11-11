@@ -1,0 +1,80 @@
+% The "%" character denotes a comment
+% This file was written by Nathan Moore, Winona State University
+% as a template for how lab reports might be written in LaTeX.
+% style choices originally come from the American Journal of Physics's
+% sample submission file, http://ajp.dickinson.edu/Contributors/manFormat.html
+%
+%
+\documentclass[prb,preprint]{revtex4-1}
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+
+%these are some macros (shortcuts)
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+
+\begin{document}
+
+\title{Digital Circuits 01: Led Throttles}
+\author{Adam Stammer}
+%\email{nmoore@winona.edu}
+%\affiliation{Physics Department, Winona State University}
+
+\date{\today}
+
+%if you include an abstract, it goes here
+\begin{abstract}
+Using resistors to limit the current going through LEDs. I found that the color of the LED changed the voltage drop across the LED thus changing the current going through them. Anything over 200 Ohms seemed to be a safe resistance to use with any of the LEDs.
+\end{abstract}
+
+\maketitle
+
+
+%These are my general reccomendations for an undergraduate lab report in Physics. 
+%
+%\textbf{Purpose}
+%The lab report should start with a purpose statement.  Briefly 
+%provide the necessary background and explain what problem your are trying to 
+%solve/investigate.
+%
+%\textbf{Conclusions} Don't be coy, cut to the point right away and state what you found. This should be breif.
+%
+%\textbf{Theory} We never just measure stuff in Physics.  There's always a 
+%theoretical idea behind the measurement we're making.  Explain  the ideas 
+%behind your work, starting at the level of a successful Physics 221/222 
+%student.
+%
+%\textbf{Data} Sketch out, in words and pictures, the apparatus you used to take data.  Report the data, graphically, if possible, and state the uncertainties  in your measurement.  Don't provide pages of computer printout here. Data tables shouldn't be your first choice when it comes to communicating your measurements.\cite{Tufte}
+%
+%\textbf{Analysis} With data presented, describe how the theory agrees/disagrees with 
+%the data you took.  Normally this is accomplished with a fit line (or math 
+%model) that is interpreted.
+%
+%\textbf{Limitations and Recommendations} Every measurement has limitations and it is only honest to report them to the reader.  ``Human Error'' is a meaningless statement.  After your analysis is complete, revisit the purpose statement.  This is the place to more forcefully argue your conclusions.    
+%
+%Notes: 
+%Writing in the first person, eg ``I" or ``We," is fine.
+%
+%\newpage
+%\textbf{Example Lab Report:}
+
+\section{Explanation and Analysis}
+
+First I set up a single LED in series with a resistor to verify it worked. After that I swapped out resistors, measuring the current each time. The collected data can be seen graphed below.
+
+
+
+Ohm's Laws tells us that the relationship between I and R is linear, such that graphing the two against each other should get us an inverse relationship slope. Which we can indeed see within the graph above.
+
+To linearalize the relationship of this graph we can simply invert the denominator of the relationship. With Ohms Law we can see this relationship should be linear. 
+
+\begin{equation}
+V=I\frac{1}{R}
+\end{equation}
+
+We do indeed see this relationship in the following graph.
+
+\end{document}

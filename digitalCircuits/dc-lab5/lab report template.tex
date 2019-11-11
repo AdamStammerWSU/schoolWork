@@ -1,0 +1,34 @@
+% The "%" character denotes a comment
+% This file was written by Nathan Moore, Winona State University
+% as a template for how lab reports might be written in LaTeX.
+% style choices originally come from the American Journal of Physics's
+% sample submission file, http://ajp.dickinson.edu/Contributors/manFormat.html
+%
+%
+\documentclass[prb,preprint]{revtex4-1}
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+
+%these are some macros (shortcuts)
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+
+\begin{document}
+
+\title{Digital Circuits Lab 02: Intro to Logic Gates}
+\author{Adam Stammer}
+%\email{adam.stammer@go.winona.edu}
+
+\date{\today}
+
+%if you include an abstract, it goes here
+
+\maketitle
+
+\section{Summary}
+This lab introduced logic gates and their construction both as transistor circuits, and as integrated circuits. We continued our learning of lab equipment including breadboarding with wires, switch, multi-meters, etc. Starting by building transistor circuits to see what logic gate they may represent we emphasized the importance of grounding the circuit and properly differentiating between high and low voltages. We also practiced building truth tables. As we progressed to more complex transistor circuits it became important to predict the output before constructing the circuit to further test our own understanding. We then moved on to the more common integrated circuit implementations of many of these gates and how wiring them up requires giving the ICs $V_{cc}$ and $GND$ in addition to the input and output signals. We also considered what happens when inputs are left "floating" and not connected to ground or high voltage, and the issues that presents. The lab gave us a good foundation from which to build our digital logic hands on abilities.
+\end{document}
+

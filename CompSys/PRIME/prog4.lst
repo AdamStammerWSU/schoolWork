@@ -1,0 +1,57 @@
+       1                                ;23456789012345678901234567890123
+       2 000000 016767  000146  000154  START:  MOV ONE,NSQ     ;INITIATE NSQ TO 1.
+       3 000006 016767  000144  000140          MOV N,TEMPN     ;MAKE A COPY OF N
+       4                                
+       5 000014 100451                          BMI ERROR       ;CRASH IF N IS NEGATIVE
+       6 000016 001450                          BEQ ERROR       ;CRASH IF N IS ZERO
+       7                                                        ;THIS COULD BE MORE EFFICIENT
+       8 000020 026767  000130  000124  SKIP1:  CMP TEMPN,ONE   ;IF N IS NOT ONE
+       9 000026 001004                          BNE OUTLOOP     ; GO TO THE ALGORITHM
+      10 000030 012767  000002  000124          MOV #2.,NSQ     ;OTHERWISE SET OUTPUT TO 2.
+      11 000036 000000                          HALT            ;AND END THE PROGRAM
+      12                                
+      13 000040 026767  000110  000104  OUTLOOP:CMP TEMPN,ONE   ;IF N IS LESS THAN OR EQUAL TO 1.
+      14 000046 003437                          BLE FINISH      ;GOTO FINISH AND EXIT
+      15 000050 062767  000002  000104          ADD #2.,NSQ     ;OTHERWISE,ADD 2 TO NSQ
+      16 000056 102430                          BVS ERROR       ;CRASH IF OVERFLOWED
+      17 000060 016767  000076  000072          MOV NSQ,J       ;COPY IT TO J
+      18 000066 162767  000002  000064          SUB #2.,J       ; AND SUBTRACT 2
+      19                                
+      20 000074 026767  000060  000050  INLOOP: CMP J,ONE       ;IF J IS LESS THAN OR EQUAL TO ONE
+      21 000102 003413                          BLE PRIME       ;IT MUST BE PRIME (NOTHING DIVIDED)
+      22 000104 016701  000052                  MOV NSQ,R1      ;COPY NSQ TO REGISTER 0
+      23 000110 005000                          CLR R0          ;TO MAKE IT DOUBLE PRECISION
+      24 000112 071067  000042                  DIV J,R0        ;DIVIDE NSQ BY J
+      25 000116 010101                          MOV R1,R1       ; SET CONDITION CODES ON REMAINDER
+      26 000120 001747                          BEQ OUTLOOP     ;IF ZERO, IT DIVIDES, NOT A PRIME
+      27 000122 162767  000002  000030          SUB #2.,J       ; CHECK THE NEXT LOWEST ODD NUMBER
+      28 000130 000761                          BR INLOOP       ; BY STARTING THE INNER LOOP OVER AGAIN
+      29                                
+      30 000132 005367  000016          PRIME:  DEC TEMPN       ;DECREMENT N BY 1
+      31 000136 000740                          BR OUTLOOP      ;AND START THE BIG LOOP OVER AGAIN
+      32                                
+      33 000140 016767  000004  000014  ERROR:  MOV ERR,NSQ     ;SET THE ERROR CODE AS THE OUTPUT
+      34                                
+      35 000146 000000                  FINISH: HALT            ;END PROGRAM
+      36                                
+      37 000150 100000                  ERR:    .WORD -32768.   ;NUMERICAL VALUE USED TO INDICATE ERROR
+      38 000152 000001                  ONE:    .WORD 1.        ;THE CONSTANT ONE
+      39 000154                         TEMPN:  .BLKW 1         ;COPY OF N USED AS LOOP COUNTER
+      40 000156                         N:      .BLKW 1         ;IN  - THE NUMBER BEING SQUARED
+      41 000160                         J:      .BLKW 1         ;THE CURRENT ODD NUMBER BEING ADDED
+      41 000162                         NSQ:    .BLKW 1         ;OUT - N SQUARED AS A 2'S COMP. NUMBER OR -32768 AS ERROR
+
+Symbol Table:
+ERR	  000150 
+ERROR	  000140 
+FINISH	  000146 
+INLOOP	  000074 
+J	  000160 
+N	  000156 
+NSQ	  000162 
+ONE	  000152 
+OUTLOO	  000040 
+PRIME	  000132 
+SKIP1	  000020 
+START	  000000 
+TEMPN	  000154 

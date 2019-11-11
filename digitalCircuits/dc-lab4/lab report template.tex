@@ -1,0 +1,87 @@
+% The "%" character denotes a comment
+% This file was written by Nathan Moore, Winona State University
+% as a template for how lab reports might be written in LaTeX.
+% style choices originally come from the American Journal of Physics's
+% sample submission file, http://ajp.dickinson.edu/Contributors/manFormat.html
+%
+%
+\documentclass[prb,preprint]{revtex4-1}
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+
+%these are some macros (shortcuts)
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+
+\begin{document}
+
+\title{Digital Circuits Lab 04: Boolean Expressions, Logic Circuit, and Simplification}
+\author{Adam Stammer}
+%\email{adam.stammer@go.winona.edu}
+
+\date{\today}
+
+%if you include an abstract, it goes here
+\begin{abstract}
+Through hands on application of both theory and circuit building we analyzed digital circuits through boolean simplification via de Morgan's theorem and the use of Karnaugh maps. After applying these concepts to known circuits, we attempted to use them to AND and XOR gates using only NAND gates.
+\end{abstract}
+
+\maketitle
+
+
+%These are my general reccomendations for an undergraduate lab report in Physics. 
+%
+%\textbf{Purpose}
+%The lab report should start with a purpose statement.  Briefly 
+%provide the necessary background and explain what problem your are trying to 
+%solve/investigate.
+%
+%\textbf{Conclusions} Don't be coy, cut to the point right away and state what you found. This should be breif.
+%
+%\textbf{Theory} We never just measure stuff in Physics.  There's always a 
+%theoretical idea behind the measurement we're making.  Explain  the ideas 
+%behind your work, starting at the level of a successful Physics 221/222 
+%student.
+%
+%\textbf{Data} Sketch out, in words and pictures, the apparatus you used to take data.  Report the data, graphically, if possible, and state the uncertainties  in your measurement.  Don't provide pages of computer printout here. Data tables shouldn't be your first choice when it comes to communicating your measurements.\cite{Tufte}
+%
+%\textbf{Analysis} With data presented, describe how the theory agrees/disagrees with 
+%the data you took.  Normally this is accomplished with a fit line (or math 
+%model) that is interpreted.
+%
+%\textbf{Limitations and Recommendations} Every measurement has limitations and it is only honest to report them to the reader.  ``Human Error'' is a meaningless statement.  After your analysis is complete, revisit the purpose statement.  This is the place to more forcefully argue your conclusions.    
+%
+%Notes: 
+%Writing in the first person, eg ``I" or ``We," is fine.
+%
+%\newpage
+%\textbf{Example Lab Report:}
+
+\section{Purpose}
+To further our understanding of digital circuits in a hands on way, and to practice not only that understanding, but also the simplification of those circuits in multiple ways. Practicing these methods is one of the fastest ways to learn it, and seeing the simplification in actual circuits helps to solidify that learning.
+
+\section{Conclusions}
+de Morgan's theorem can be used to simplify many circuits and can be especially helpful in quick simplification of more simple boolean expressions. More complex boolean expressions are often best tackled with Karnaugh maps. We also found that NAND gates can be used to build AND gates, XOR gates, and INVERTERS supporting the idea that the NAND gate is the universal gate.
+
+\section{Theory}
+We already assumed deMorgan's theorem to be true.
+
+Our goal is to build an AND gate with just NAND gates. We already know that connecting the inputs of a NAND gate get you an INVERTER. We can also say that and NAND is an inverted AND. Thus, all we have to do is connect the output of a NAND to the input of an INVERTER made with a NAND gate and we have an AND gate made with 2 NANDS. See the last page of the attached packet for circuit diagrams.
+
+Our next goal is to create an XOR gate using only NAND gates. We are accepting that $A \oplus B = A\overline{B}+\overline{B}A$. We also know that a NAND is the same as a negative OR so if we negate the $A\overline{B}$ and the $\overline{A}B$ we can NAND them together. We can write this as $A\overline{B}+\overline{B}A = \overline{ \overline{A\overline{B}}*\overline{\overline{A}B}}$. So we will need to use a NAND gate as an INVERTER for A and another to do the same to B. Then we can NAND $A$ and $\overline{B}$, and do the same to $\overline{A}$ and $B$. Then NAND the two outputs of those together and we have our $A \oplus B$. See the last page of the attached packet for circuit diagram and truth table.
+
+\section{Analysis}
+All simplified circuits did test the same output as their more complex origins. This can be seen in the many truth tables of the attached lab packet.
+
+%\begin{thebibliography}{99}
+% The numeral (here 99) in curly braces is nominally the number of entries in
+% the bibliography. It's supposed to affect the amount of space around the
+% numerical labels, so only the number of digits should matter--and even that
+% seems to make no discernible difference.
+%Not Requested
+%\end{thebibliography}
+
+\end{document}
