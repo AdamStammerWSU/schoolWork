@@ -60,23 +60,21 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 1
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/is2751zv/Desktop/000labs/dc-lab7/332_Proj/lab1/lab1.cache/wt [current_project]
-  set_property parent.project_path C:/Users/is2751zv/Desktop/000labs/dc-lab7/332_Proj/lab1/lab1.xpr [current_project]
-  set_property ip_output_repo C:/Users/is2751zv/Desktop/000labs/dc-lab7/332_Proj/lab1/lab1.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/is2751zv/Documents/git/schoolWork/digitalCircuits/dc-lab7/332_Proj/lab1/lab1.cache/wt [current_project]
+  set_property parent.project_path C:/Users/is2751zv/Documents/git/schoolWork/digitalCircuits/dc-lab7/332_Proj/lab1/lab1.xpr [current_project]
+  set_property ip_output_repo C:/Users/is2751zv/Documents/git/schoolWork/digitalCircuits/dc-lab7/332_Proj/lab1/lab1.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/is2751zv/Desktop/000labs/dc-lab7/332_Proj/lab1/lab1.runs/synth_1/tryAfter.dcp
-  read_xdc C:/Users/is2751zv/Desktop/000labs/dc-lab7/332_Proj/lab1/lab1.srcs/constrs_1/imports/332_Proj/lab1_nexys4_ddr.xdc
+  add_files -quiet C:/Users/is2751zv/Documents/git/schoolWork/digitalCircuits/dc-lab7/332_Proj/lab1/lab1.runs/synth_1/tryAfter.dcp
+  read_xdc C:/Users/is2751zv/Documents/git/schoolWork/digitalCircuits/dc-lab7/332_Proj/lab1/lab1.srcs/constrs_1/imports/332_Proj/lab1_nexys4_ddr.xdc
   link_design -top tryAfter -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]

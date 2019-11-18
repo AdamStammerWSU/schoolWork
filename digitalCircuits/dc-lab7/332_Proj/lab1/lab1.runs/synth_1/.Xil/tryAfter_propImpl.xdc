@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/is2751zv/Desktop/000labs/dc-lab7/332_Proj/lab1/lab1.srcs/constrs_1/imports/332_Proj/lab1_nexys4_ddr.xdc rfile:../../../lab1.srcs/constrs_1/imports/332_Proj/lab1_nexys4_ddr.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/is2751zv/Documents/git/schoolWork/digitalCircuits/dc-lab7/332_Proj/lab1/lab1.srcs/constrs_1/imports/332_Proj/lab1_nexys4_ddr.xdc rfile:../../../lab1.srcs/constrs_1/imports/332_Proj/lab1_nexys4_ddr.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { swt[0] }];
 set_property src_info {type:XDC file:1 line:6 export:INPUT save:INPUT read:READ} [current_design]
