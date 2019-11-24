@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Nov 21 14:45:32 2019
+# Process ID: 18452
+# Current directory: C:/Users/is2751zv/Documents/git/schoolWork/digitalCircuits/n/332_Proj/lab1/lab1.runs/synth_1
+# Command line: vivado.exe -log tryAfter.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tryAfter.tcl
+# Log file: C:/Users/is2751zv/Documents/git/schoolWork/digitalCircuits/n/332_Proj/lab1/lab1.runs/synth_1/tryAfter.vds
+# Journal file: C:/Users/is2751zv/Documents/git/schoolWork/digitalCircuits/n/332_Proj/lab1/lab1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source tryAfter.tcl -notrace

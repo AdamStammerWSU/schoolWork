@@ -3,30 +3,30 @@
 // Module Name: lab1
 //////////////////////////////////////////////////////////////////////////////////
 module tryAfter(
-    input [7:0] swt,
-    output [7:0] led
+    input [7:0] SWT,
+    output [7:0] LED
     
     );
     
     wire [4:0] c_in;
     wire [3:0] out;
     
-    fullAdder bit0(swt[0], swt[4], 0, c_in[0], out[0]);
-    fullAdder bit1(swt[1], swt[5], c_in[0], c_in[1], out[1]);
-    fullAdder bit2(swt[2], swt[6], c_in[1], c_in[2], out[2]);
-    fullAdder bit3(swt[3], swt[7], c_in[2], c_in[3], out[3]);
+    fullAdder bit0(SWT[0], SWT[4], 0, c_in[0], out[0]);
+    fullAdder bit1(SWT[1], SWT[5], c_in[0], c_in[1], out[1]);
+    fullAdder bit2(SWT[2], SWT[6], c_in[1], c_in[2], out[2]);
+    fullAdder bit3(SWT[3], SWT[7], c_in[2], c_in[3], out[3]);
     
     
     //digitDisplay d0(out, a3, b3, c3, d3, e3, f3, g3, a3);
     
     
-//    assign led[0] = out[0];
-//    assign led[1] = out[1];
-//    assign led[2] = out[2];
-//    assign led[3] = out[3];
-//    assign led[4] = c_in[3];
+    assign LED[0] = out[0];
+    assign LED[1] = out[1];
+    assign LED[2] = out[2];
+    assign LED[3] = out[3];
+    assign LED[4] = c_in[3];
     
-    //led[8] = c_in[4];
+    assign LED[5] = c_in[4];
     
 endmodule
 
