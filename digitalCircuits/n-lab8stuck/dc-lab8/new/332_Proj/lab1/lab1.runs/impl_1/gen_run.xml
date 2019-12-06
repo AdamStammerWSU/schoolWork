@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575591798">
+  <File Type="BITSTR-BMM" Name="implement_clocks_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="implement_clocks_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="implement_clocks_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="implement_clocks_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="implement_clocks.tcl"/>
+  <File Type="OPT-TIMING" Name="implement_clocks_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="implement_clocks_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="implement_clocks_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="implement_clocks_reports.tcl"/>
+  <File Type="OPT-DRC" Name="implement_clocks_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="implement_clocks.hwdef"/>
+  <File Type="PWROPT-DCP" Name="implement_clocks_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="implement_clocks_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="implement_clocks_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="implement_clocks_placed.dcp"/>
+  <File Type="PLACE-IO" Name="implement_clocks_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="implement_clocks_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="implement_clocks_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="implement_clocks_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="implement_clocks_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="implement_clocks_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="implement_clocks_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="implement_clocks.bgn"/>
+  <File Type="PLACE-TIMING" Name="implement_clocks_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="implement_clocks_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="implement_clocks.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="implement_clocks_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="implement_clocks_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="implement_clocks_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="implement_clocks.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="implement_clocks_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="implement_clocks_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="implement_clocks_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="implement_clocks_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="implement_clocks_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="implement_clocks_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="implement_clocks.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="implement_clocks_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="implement_clocks.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="implement_clocks_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="implement_clocks_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="implement_clocks.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="implement_clocks_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="implement_clocks_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="implement_clocks_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="implement_clocks_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="implement_clocks_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="implement_clocks_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="implement_clocks_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="implement_clocks_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="implement_clocks_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="implement_clocks_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="implement_clocks_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="implement_clocks_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="implement_clocks_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="implement_clocks_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="implement_clocks_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="implement_clocks_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="implement_clocks_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="implement_clocks_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="implement_clocks_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="implement_clocks.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="implement_clocks_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="implement_clocks.rbt"/>
+  <File Type="BITSTR-NKY" Name="implement_clocks.nky"/>
+  <File Type="BG-DRC" Name="implement_clocks.drc"/>
+  <File Type="RDI-RDI" Name="implement_clocks.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/332_Proj/lab1.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab1.v"/>
+        <Attr Name="ImportTime" Val="1571339688"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="implement_clocks"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/332_Proj/lab1_nexys4_ddr.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab1_nexys4_ddr.xdc"/>
+        <Attr Name="ImportTime" Val="1571339696"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
