@@ -1,0 +1,2 @@
+question 6:
+	R=1000, not blocked -> 1.2mA, blocked -> .4mA
