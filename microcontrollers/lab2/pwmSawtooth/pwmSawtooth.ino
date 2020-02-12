@@ -7,28 +7,13 @@ void setup() {
 }
 
 void loop() {
-  for(int i = 0; i < 1000; i++) {
-    
-    analogueWrite(i, outPin);
-  }
-
-  for(int i = 800; i > 0; i--) {
-    
-    analogueWrite(sin(i), outPin);
-  }
+  analogueWrite(.5, 2, outPin);
 }
 
-int analogueWrite(short onCycle, int pin) {
-  if(onCycle == 0) {
-    digitalWrite(pin, LOW);
-  } else if(onCycle == 1000) {
+int analogueWrite(float duty, long cycle, int pin) {
     digitalWrite(pin, HIGH);
-  } else {
-    //a duty cycle that isn't 1 or 0
-
-    digitalWrite(pin, HIGH);
-    delayMicroseconds(onCycle);
+    delayMicroseconds(duty*cycle);
     digitalWrite(pin, LOW);
-    delayMicroseconds(1000 - onCycle);
-  }
+    delayMicroseconds(cycle - (duty*cycle));
+    
 }
