@@ -1,0 +1,171 @@
+% The "%" character denotes a comment
+% This file was written by Nathan Moore, Winona State University
+% as a template for how lab reports might be written in LaTeX.
+% style choices originally come from the American Journal of Physics's
+% sample submission file, http://ajp.dickinson.edu/Contributors/manFormat.html
+%
+%
+\documentclass[prb,preprint]{revtex4-1}
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+
+%these are some macros (shortcuts)
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+
+\begin{document}
+
+\title{Lab 01: ARP}
+\author{Dillon McDaniel, Adam Stammer}
+%\email{adam.stammer@go.winona.edu}
+
+\date{\today}
+
+%if you include an abstract, it goes here
+\begin{abstract}
+Using a Windows 10 PC and a Raspberry Pi, we experimented with multiple network configurations and used ARP requests to gain a better understanding of the traffic and shape of the lab network. These experiments began with IPv4 configurations on both the same and different networks from our destination hosts, and moved on to similar experiments with IPv6.
+\end{abstract}
+
+\maketitle
+
+
+%These are my general reccomendations for an undergraduate lab report in Physics. 
+%
+%\textbf{Purpose}
+%The lab report should start with a purpose statement.  Briefly 
+%provide the necessary background and explain what problem your are trying to 
+%solve/investigate.
+%
+%\textbf{Conclusions} Don't be coy, cut to the point right away and state what you found. This should be breif.
+%
+%\textbf{Theory} We never just measure stuff in Physics.  There's always a 
+%theoretical idea behind the measurement we're making.  Explain  the ideas 
+%behind your work, starting at the level of a successful Physics 221/222 
+%student.
+%
+%\textbf{Data} Sketch out, in words and pictures, the apparatus you used to take data.  Report the data, graphically, if possible, and state the uncertainties  in your measurement.  Don't provide pages of computer printout here. Data tables shouldn't be your first choice when it comes to communicating your measurements.\cite{Tufte}
+%
+%\textbf{Analysis} With data presented, describe how the theory agrees/disagrees with 
+%the data you took.  Normally this is accomplished with a fit line (or math 
+%model) that is interpreted.
+%
+%\textbf{Limitations and Recommendations} Every measurement has limitations and it is only honest to report them to the reader.  ``Human Error'' is a meaningless statement.  After your analysis is complete, revisit the purpose statement.  This is the place to more forcefully argue your conclusions.    
+%
+%Notes: 
+%Writing in the first person, eg ``I" or ``We," is fine.
+%
+%\newpage
+%\textbf{Example Lab Report:}
+
+\section{Purpose}
+The purpose of this lab is to get an understanding of basic network topology as well as ARP protocols such as:
+\begin{itemize}
+\item Routing to a host on the same network
+\item Routing to a  host on a different network
+\item Host Specific Routing
+\item Development and configuration of the ARP cache
+\end{itemize}
+Through hands on experimentation this lab will give us experience and a better understanding of these topics. This lab will also give valuable experience working in the lab that we will use in the future, and the systems that compromise said lab.
+
+\section{Equipment/Supplies}
+Necessary equipment was supplied as components of the lab room itself. Used equipment includes the following:
+\begin{itemize}
+	\item Windows 10 Desktop PC with Windows Powershell Administrative Privileges
+	\item Raspberry Pi with root terminal access
+	\item Network access for both systems with additional connected hosts as required by the experiments denoted below
+\end{itemize}
+
+\section{Methodology}
+First, we ensured our Windows machine was correctly configured to be on the 199.17.161.0 network by running the ipconfig command. Once we did, we sent ICMP echo request to 3 different IP addresses. One of which was on the same logical and physical network, one that was on the same physical but different logical network, and one that was on a different network altogether. We got a response from all three with their routing entries logged in the ARP cache. The one on the same network as us gave us the MAC address of a Microsoft Ethernet card while the off-network ones returned the MAC address of the Cisco router that was on the network, as all traffic was to be routed through that interface first.
+
+There is at least one switch between our systems and the router that showed up in our ARP cache but the switch itself never showed in the cache. This is because the switch is a layer 2 device without a MAC address, at least for routing purposes.
+\newline
+
+After that we re-configured our device to connect to the 199.17.162.0 network. We then sent out echo requests to the same 3 addresses plus an additional off-network address. And same as before we got results showing the router from off-network address and one response from the Raspberry Pi that was connected to the network. 
+\newline
+
+We then pinged a few nodes off WSU’s network and got the router in the ARP cache. This was expected as all network traffic to these nodes would first be routed to the router of our network. When we pinged hosts that we believed to not exist, the ping eventually timed out and resulted in a "host unreachable" message.
+\newline
+
+While still connected to the 162 network we added a host specific route for a node on the 199.17.161.0 network. After the node was pinged, the ARP cache showed a direct connection, instead of routing through the router. We then added a host specific route for the entire 161.0 class C network, allowing us to directly route to any node on 161.0 network.
+\newline
+
+For the next section of the lab we turned on the IPv6 capabilities of our device. After we were properly configured, we pinged the Raspberry Pi using its IPv6 address and its link local address.
+\newline
+
+We then ran similar experiments on the Raspberry Pi to see if the operating system behaved similarly. We pinged the windows machine and examined both ARP caches to see that the Raspberry Pi appeared in the Windows ARP cache. We then pinged the Pi to see that the reverse was true as well. 
+
+\newpage
+
+\section{Raw Results}
+\begin{itemize}
+	\item Pinging from the 199.17.161 net id
+	\begin{enumerate}
+		\item     199.17.161.32, ARP cache: 199.17.161.32 
+		\item     199.17.161.24, ARP cache: 199.17.161.24 
+		\item     199.17.166.186, ARP cache: 199.17.161.1 
+		\item     199.17.162.20, ARP cache: 199.17.161.1 
+	\end{enumerate}
+	
+	\item Pinging from 199.17.162 net id
+	\begin{enumerate}
+		\item     199.17.161.32, ARP cache: 199.17.162.1 
+		\item     199.17.161.24, ARP cache: 199.17.162.1 
+		\item     199.17.166.186, ARP cache: 199.17.162.1 
+		\item     199.17.162.20, ARP cache: 199.17.162.20 
+	\end{enumerate}
+
+	\item Pinging from 199.17.162 net id with a host specific route to 199.17.161.132
+	\begin{enumerate}
+		\item     199.17.161.32, ARP cache: 199.17.161.32 
+		\item     199.17.161.24, ARP cache: 199.17.162.1 
+	\end{enumerate}
+
+	\item Pinging from 199.17.162 net id with a host specific route to net id 199.17.161.0
+	\begin{enumerate}
+		\item     199.17.161.32, ARP cache: 199.17.161.32 
+		\item     199.17.161.24, ARP cache: 199.17.161.24 
+	\end{enumerate}
+
+	\item IPv6 Interfaces
+	\begin{enumerate}
+		\item 1:Loopback
+		\item 17:Ethernet
+	\end{enumerate}
+	
+	\item Pingin Windows machine from Raspberry Pi and vice versa on the same logical network
+	\begin{enumerate}
+		\item     Windows ARP cache when being pinged by Pi: 199.17.162.32 
+		\item     Raspberry Pi ARP cache when being pinged by Windows: 199.17.162.174 
+	\end{enumerate}
+	
+	\item Piging Windows machine from Raspberry Pi and vice versa on different logical networks
+	\begin{enumerate}
+		\item     Windows ARP cache when being pinged by Pi: 199.17.161.1 
+		\item     Raspberry Pi ARP cache when being pinged by Windows: 199.17.161.1 
+	\end{enumerate}
+\end{itemize}
+
+\section{Analysis}
+With the results shown in this lab we can determine several things about how the network might route traffic.
+\begin{itemize}
+	\item     If the source address and the destination address have the same net id, they will communicate directly, saving each other’s MAC address in their ARP caches. 
+	\item     If they do not share the same net id the host will send it to the default gateway of the network. It will then save that routing in its ARP cache. 
+	\item     However, if the host has a host specific route for a particular address or net address it will always send packets on that route. That routing will then be listed in the ARP cache for that entry. 
+	\item     When a host receives packets from a source address it will save the were it received the packets from as its default for routing to the source address. 
+\end{itemize}
+These statements all assume the destination host is reachable.
+
+\section{Lessons and Other Observations}
+Windows and Linux differ significantly in their display of the ARP cache and routing tables. It proved a noticeable hindrance in this lab's experiments and may foreshadow some of the challenges in the future.
+\newline
+\linebreak
+We also noticed that proper configuration is key in the success of these experiments, especially when comparing results to others. This may also prove to be a challenge in the future, but now we know to stay vigilant.
+\newline
+\linebreak
+Unexpected results were also very hard to diagnose due to the multiple layers of systems in which such results could form. It could be a configuration issue on our systems, or that of other network hosts, some of which are entirely out of our control. There may be unexpected interactions between our own systems and that of our peers. It can be difficult to solve a problem when you first have to find where it came from in the first place. This wasn't a significant issue in this lab, but we suspect it may grow as a concern as the labs become more complicated.
+
+\end{document}
