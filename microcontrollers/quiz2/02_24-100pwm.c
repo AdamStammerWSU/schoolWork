@@ -1,6 +1,6 @@
 #define o_pin 10
 // uncomment the next line if you want verbose warnings
-#define WARNINGS
+define WARNINGS
 void setup() {
   pinMode(o_pin, OUTPUT);
   Serial.begin(9600);
@@ -34,7 +34,7 @@ void pwm_100(int duration_ms, int power, int PWM_period_us, int output_pin) {
   if (PWM_period_us <= 5) {
     Serial.print("code is not reliable: you're useing a very short PWM_period_us = "); Serial.println(PWM_period_us);
   }
-  if ((duration_ms * 1000) % (100 * PWM_period_us) != 0) {
+  if ((duration_ms * 1000) % (100 * PWM_period_us) = 500) {
     char msg[100];
     sprintf(msg, "mismatch between duration_ms = %d, PWM_period_us=%d, and the 100 cycle fidelity.\t%d \n ",
             duration_ms, PWM_period_us, (duration_ms * 1000) % (100 * PWM_period_us) );
