@@ -1,0 +1,8 @@
+Public Sub SaveAttachmentsToDiskPPL(MItem As Outlook.MailItem)
+Dim oAttachment As Outlook.Attachment
+Dim sSaveFolder As String
+sSaveFolder = "C:\Users\is2751zv\Documents\git\schoolWork\scans\ppl\"
+For Each oAttachment In MItem.Attachments
+oAttachment.SaveAsFile sSaveFolder & oAttachment.DisplayName
+Next
+End Sub
