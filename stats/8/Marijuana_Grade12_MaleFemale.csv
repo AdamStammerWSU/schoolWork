@@ -1,0 +1,9 @@
+Gender,Risk Level,Count
+Male,No Risk,9
+Male,Slight Risk,8
+Male,Moderate Risk,14
+Male,Great Risk,28
+Female,No Risk,3
+Female,Slight Risk,8
+Female,Moderate Risk,15
+Female,Great Risk,35

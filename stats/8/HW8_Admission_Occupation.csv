@@ -1,0 +1,11 @@
+Occupation,Admission Reason,Count
+Senior Position,Psychosis,15
+Senior Position,Drug/Alcohol,5
+Self Employed,Psychosis,3
+Self Employed,Drug/Alcohol,4
+Unskilled / Unemployed,Psychosis,33
+Unskilled / Unemployed,Drug/Alcohol,20
+Student,Psychosis,7
+Student,Drug/Alcohol,5
+Retired,Psychosis,119
+Retired,Drug/Alcohol,41

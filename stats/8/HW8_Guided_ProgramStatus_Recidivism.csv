@@ -1,0 +1,10 @@
+Status Regarding Program,Type of Recidivism,Counts
+Never Entered,Sex Rearrest,53
+Never Entered,Other Rearrest,150
+Never Entered,No Rearrest,282
+Quit/Terminated,Sex Rearrest,26
+Quit/Terminated,Other Rearrest,82
+Quit/Terminated,No Rearrest,132
+Completed,Sex Rearrest,12
+Completed,Other Rearrest,20
+Completed,No Rearrest,215
