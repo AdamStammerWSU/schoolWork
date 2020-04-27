@@ -1,0 +1,1 @@
+(load "C:\\Users\\is2751zv\\Documents\\git\\schoolWork\\ppl\\lispInClass\\pgm.lsp")
