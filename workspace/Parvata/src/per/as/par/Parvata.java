@@ -4,7 +4,10 @@ import java.awt.Graphics;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -28,11 +31,13 @@ public class Parvata {
 	int outputPageOffset = 0;
 	int signatureInputPageCount = 4;
 	int signatureOutputPageCount = 1;
+	int pageCountAcross = 0;
+	int pageCountDown = 0;
 
-	public Parvata(boolean debug, String inputPrefix, String outputPrefix) {
-		this.debug = debug;
+	public Parvata(String layoutFile, String inputPrefix, String outputPrefix) {
 		this.inputPrefix = inputPrefix;
 		this.outputPrefix = outputPrefix;
+		readLayoutFile(layoutFile);
 	}
 
 	public void spanishImposition() {
@@ -161,6 +166,24 @@ public class Parvata {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	private void readLayoutFile(String fileName) {
+		BufferedReader reader = null;
+		try {
+			reader = new BufferedReader(new FileReader(fileName));
+			String input = "";
+			String line = "";
+			while ((line = reader.readLine()) != null) {
+				input += line;
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("Cannot find file " + fileName);
+			Main.exit(false);
+		} catch (IOException e) {
+			System.out.println("Error reading " + fileName);
+			Main.exit(true);
+		}
 	}
 
 	public void setSignatureCount(int sigCount) {

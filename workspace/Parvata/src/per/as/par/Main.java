@@ -11,7 +11,7 @@ public class Main {
 			System.out.println("More information needed. Printing help (--?, --help)");
 			printHelp();
 		} else {
-			pav = new Parvata(false, args[args.length - 2], args[args.length - 1]);
+			pav = new Parvata(args[args.length - 2], args[args.length - 1], args[args.length - 3]);
 			for (int i = 0; i < args.length - 2; i++) {
 				String arg = args[i];
 				switch (arg) {
@@ -34,14 +34,6 @@ public class Main {
 				case "-firstin":
 					pav.setInputPageOffset(Integer.parseInt(args[++i]));
 					System.out.println("Page Input Offset Set To " + pav.getInputPageOffset());
-					break;
-				case "-sic":
-					pav.setSignatureInputPageCount(Integer.parseInt(args[++i]));
-					System.out.println("Signature Input Page Count Set To " + pav.getSignatureInputPageCount());
-					break;
-				case "-soc":
-					pav.setSignatureOutputPageCount(Integer.parseInt(args[++i]));
-					System.out.println("Signature Output Page Count Set To " + pav.getSignatureOutputPageCount());
 					break;
 				case "-sc":
 					pav.setSignatureCount(Integer.parseInt(args[++i]));
