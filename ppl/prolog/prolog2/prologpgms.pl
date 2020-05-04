@@ -82,20 +82,21 @@ t(b, f).
 t(c, f).
 
 truth(X, Y). :- t(X, Y).
-listTest(List, H, T) :- List = [Head | Rest], H = Head, T = Rest.
+disect(List, H, R) :- List = [Head | Rest], H = Head, R = Rest.
+
+truthLookup([], V) :- false.
+truthLookup(TList, V) :- TList = [Head | Rest], disect(Head, H, R), ((H = V) -> ((R = [t]) -> (true); (false)) ; truthLookup(Rest, V)).
 					 
-/*test(List, V) :- List = [ [Head | T], Rest], V = T. */
-test(List, V) :- List = [ [Head | T], Rest], mylast(T, I), append(V, T, V), test(Rest, V).
-					 
-truthlist(List, V) :- List = [ [Head | T] | Rest], append(V, T, Z), (filledList(Rest) -> truthlist(Rest, Z), V = Z).
+/*truthlist(List, V) :- List = [ [Head | T] | Rest], append(V, T, Z), (filledList(Rest) -> truthlist(Rest, Z), V = Z).*/
 
-myAnd([]) :- true.
-myAnd(List) :- List = [Head | Rest], ((Head = t) -> myAnd(Rest) ; false).
 
-myOr([]) :- false.
-myOr(List) :- List = [Head | Rest], ((Head = t) -> true ; myOr(Rest) ).
+myAnd([], TList) :- true.
+myAnd(List, TList) :- List = [Head | Rest], (truthLookup(TList, Head) -> myAnd(Rest, TList) ; false).
 
-myNot(List) :- List = [Head | Rest], ((Head = t) -> false ; true).
+myOr([], TList) :- false.
+myOr(List, TList) :- List = [Head | Rest], (truthLookup(TList, Head) -> true ; myOr(Rest, TList)).
+
+myNot(List, TList) :- List = [Head | Rest], (truthLookup(TList, Head) -> false ; true).
 
 		
 evalb(List) :- List = [Head | Rest], ((Head = and) -> (myAnd(Rest)) ; ((Head = or) -> (myOr(Rest)) ; (myNot(Rest)))).

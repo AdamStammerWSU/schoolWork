@@ -1,0 +1,16 @@
+Break 3 [22]> (evalexp 'and '((a t) (b t) (c t)))
+T
+Break 3 [22]> (evalexp 'and '((a t) (b t) (c f)))
+F
+Break 3 [22]> (evalexp 'or '((a t) (b t) (c f)))
+T
+Break 3 [22]> (evalexp 'or '((a t) (b f) (c f)))
+T
+Break 3 [22]> (evalexp 'or '((a f) (b f) (c f)))
+F
+Break 3 [22]> (evalexp 'not '((a f) (b f) (c f)))
+(T T T)
+Break 3 [22]> (evalexp 'not '((a f) (b t) (c f)))
+(T F T)
+Break 3 [22]> (evalexp 'not '((a f) (b t) (c t)))
+(T F F)
