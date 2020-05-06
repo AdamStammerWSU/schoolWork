@@ -30,9 +30,9 @@ void loop() {
   t1=millis() - startTime;
 
   //convert adc input to voltage
-  voltage = 5.0*(reading/1023.0);
+  mVoltage = 5000*(reading/1023.0);
   //voltage to temp conversion 10mV/C
-  temp = (voltage * (1.0/0.01)) - 68.0;
+  tempF = (mVoltage / 10);
 
   //print out the data (time, reading, voltage, temp)
   Serial.print(t1);
