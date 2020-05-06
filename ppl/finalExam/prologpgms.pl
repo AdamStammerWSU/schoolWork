@@ -103,7 +103,7 @@ evalb(List) :- List = [Head | Rest], ((Head = and) -> (myAnd(Rest)) ; ((Head = o
 
 
 countpositives([],0).
-countpositives(List, R) :- List = [Head | Rest], (>(> Head 0) ->  countitems(Rest, T), R = T+1 ;   countitems(Rest, T), R = T).
+countpositives(List, R) :- List = [Head | Rest], (>( Head, 0) ->  countpositives(Rest, T), R is T + 1 ;   countpositives(Rest, T), R = T).
 
 
 
