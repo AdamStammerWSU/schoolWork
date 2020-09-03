@@ -29,8 +29,8 @@ public class Parvata {
 
 	int inputPageOffset = 0;
 	int outputPageOffset = 0;
-	int signatureInputPageCount = 4;
-	int signatureOutputPageCount = 1;
+	int signatureInputPageCount = 16;
+	int signatureOutputPageCount = 8;
 	int pageCountAcross = 0;
 	int pageCountDown = 0;
 
@@ -54,75 +54,104 @@ public class Parvata {
 
 	private void signatureImpose() {
 
-		int inputPage0OffsetOrdering[] = { 4, 11, 3, 12 };
-		int inputPage1OffsetOrdering[] = { 10, 5, 13, 2 };
-		int inputPage2OffsetOrdering[] = { 6, 9, 1, 14 };
-		int inputPage3OffsetOrdering[] = { 8, 7, 15, 0 };
+//		int inputPage0OffsetOrdering[] = { 4, 11, 3, 12 };
+//		int inputPage1OffsetOrdering[] = { 10, 5, 13, 2 };
+//		int inputPage2OffsetOrdering[] = { 6, 9, 1, 14 };
+//		int inputPage3OffsetOrdering[] = { 8, 7, 15, 0 };
+
+		int inputPage0OffsetOrdering[] = { 1, 14 };
+		int inputPage1OffsetOrdering[] = { 15, 0 };
+		int inputPage2OffsetOrdering[] = { 3, 12 };
+		int inputPage3OffsetOrdering[] = { 13, 2 };
+		int inputPage4OffsetOrdering[] = { 5, 10 };
+		int inputPage5OffsetOrdering[] = { 11, 4 };
+		int inputPage6OffsetOrdering[] = { 7, 8 };
+		int inputPage7OffsetOrdering[] = { 9, 6 };
 		int i = 0;
 
 		// render the 4 output pages
 		BufferedImage page0 = renderPage(pageWidth, pageHeight,
 				inputPrefix + String.format("%04d", inputPage0OffsetOrdering[i++] + inputPageOffset) + ".png",
-				inputPrefix + String.format("%04d", inputPage0OffsetOrdering[i++] + inputPageOffset) + ".png",
-				inputPrefix + String.format("%04d", inputPage0OffsetOrdering[i++] + inputPageOffset) + ".png",
 				inputPrefix + String.format("%04d", inputPage0OffsetOrdering[i++] + inputPageOffset) + ".png");
 		i = 0;
+		saveFile(page0, outputPrefix + String.format("%04d", 0 + outputPageOffset) + ".png");
+		page0 = null;
+
 		BufferedImage page1 = renderPage(pageWidth, pageHeight,
-				inputPrefix + String.format("%04d", inputPage1OffsetOrdering[i++] + inputPageOffset) + ".png",
-				inputPrefix + String.format("%04d", inputPage1OffsetOrdering[i++] + inputPageOffset) + ".png",
 				inputPrefix + String.format("%04d", inputPage1OffsetOrdering[i++] + inputPageOffset) + ".png",
 				inputPrefix + String.format("%04d", inputPage1OffsetOrdering[i++] + inputPageOffset) + ".png");
 		i = 0;
+		saveFile(page1, outputPrefix + String.format("%04d", 1 + outputPageOffset) + ".png");
+		page1 = null;
+
 		BufferedImage page2 = renderPage(pageWidth, pageHeight,
-				inputPrefix + String.format("%04d", inputPage2OffsetOrdering[i++] + inputPageOffset) + ".png",
-				inputPrefix + String.format("%04d", inputPage2OffsetOrdering[i++] + inputPageOffset) + ".png",
 				inputPrefix + String.format("%04d", inputPage2OffsetOrdering[i++] + inputPageOffset) + ".png",
 				inputPrefix + String.format("%04d", inputPage2OffsetOrdering[i++] + inputPageOffset) + ".png");
 		i = 0;
+		saveFile(page2, outputPrefix + String.format("%04d", 2 + outputPageOffset) + ".png");
+		page2 = null;
+
 		BufferedImage page3 = renderPage(pageWidth, pageHeight,
 				inputPrefix + String.format("%04d", inputPage3OffsetOrdering[i++] + inputPageOffset) + ".png",
-				inputPrefix + String.format("%04d", inputPage3OffsetOrdering[i++] + inputPageOffset) + ".png",
-				inputPrefix + String.format("%04d", inputPage3OffsetOrdering[i++] + inputPageOffset) + ".png",
 				inputPrefix + String.format("%04d", inputPage3OffsetOrdering[i++] + inputPageOffset) + ".png");
-
-		// save the page
-		saveFile(page0, outputPrefix + String.format("%04d", 0 + outputPageOffset) + ".png");
-		saveFile(page1, outputPrefix + String.format("%04d", 1 + outputPageOffset) + ".png");
-		saveFile(page2, outputPrefix + String.format("%04d", 2 + outputPageOffset) + ".png");
+		i = 0;
 		saveFile(page3, outputPrefix + String.format("%04d", 3 + outputPageOffset) + ".png");
+		page3 = null;
+
+		BufferedImage page4 = renderPage(pageWidth, pageHeight,
+				inputPrefix + String.format("%04d", inputPage4OffsetOrdering[i++] + inputPageOffset) + ".png",
+				inputPrefix + String.format("%04d", inputPage4OffsetOrdering[i++] + inputPageOffset) + ".png");
+		i = 0;
+		saveFile(page4, outputPrefix + String.format("%04d", 4 + outputPageOffset) + ".png");
+		page4 = null;
+
+		BufferedImage page5 = renderPage(pageWidth, pageHeight,
+				inputPrefix + String.format("%04d", inputPage5OffsetOrdering[i++] + inputPageOffset) + ".png",
+				inputPrefix + String.format("%04d", inputPage5OffsetOrdering[i++] + inputPageOffset) + ".png");
+		i = 0;
+		saveFile(page5, outputPrefix + String.format("%04d", 5 + outputPageOffset) + ".png");
+		page5 = null;
+
+		BufferedImage page6 = renderPage(pageWidth, pageHeight,
+				inputPrefix + String.format("%04d", inputPage6OffsetOrdering[i++] + inputPageOffset) + ".png",
+				inputPrefix + String.format("%04d", inputPage6OffsetOrdering[i++] + inputPageOffset) + ".png");
+		i = 0;
+		saveFile(page6, outputPrefix + String.format("%04d", 6 + outputPageOffset) + ".png");
+		page6 = null;
+
+		BufferedImage page7 = renderPage(pageWidth, pageHeight,
+				inputPrefix + String.format("%04d", inputPage7OffsetOrdering[i++] + inputPageOffset) + ".png",
+				inputPrefix + String.format("%04d", inputPage7OffsetOrdering[i++] + inputPageOffset) + ".png");
+		saveFile(page7, outputPrefix + String.format("%04d", 7 + outputPageOffset) + ".png");
+		page7 = null;
+
 	}
 
-	private BufferedImage renderPage(int width, int height, String a, String b, String c, String d) {
+	private BufferedImage renderPage(int width, int height, String a, String b) {
 		// declare input images
 		BufferedImage bufA;
 		BufferedImage bufB;
-		BufferedImage bufC;
-		BufferedImage bufD;
 
 		// read in the images
 		bufA = readFile(a);
 		bufB = readFile(b);
-		bufC = readFile(c);
-		bufD = readFile(d);
 
 		// size output image accordingly
 		setPageWidth(bufA.getWidth() * 2);
-		setPageHeight(bufA.getHeight() * 2);
+		setPageHeight(bufA.getHeight());
 
 		// create output image to draw on
 		BufferedImage page = new BufferedImage(pageWidth, pageHeight, BufferedImage.TYPE_INT_ARGB);
 		Graphics pageGraphics = page.getGraphics();
 
-		bufA = flipImage(bufA, (byte) 3);
-		bufB = flipImage(bufB, (byte) 3);
+		// bufA = flipImage(bufA, (byte) 3);
+		// bufB = flipImage(bufB, (byte) 3);
 
 		// draw on the page |A B|
 		// -----------------|C D|
 		// with A and B upside down
 		pageGraphics.drawImage(bufA, 0, 0, null);
-		pageGraphics.drawImage(bufB, bufB.getWidth(), 0, null);
-		pageGraphics.drawImage(bufC, 0, bufC.getHeight(), null);
-		pageGraphics.drawImage(bufD, bufD.getWidth(), bufD.getHeight(), null);
+		pageGraphics.drawImage(bufB, bufA.getWidth(), 0, null);
 
 		return page;
 	}
@@ -179,7 +208,7 @@ public class Parvata {
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("Cannot find file " + fileName);
-			Main.exit(false);
+			// Main.exit(false);
 		} catch (IOException e) {
 			System.out.println("Error reading " + fileName);
 			Main.exit(true);

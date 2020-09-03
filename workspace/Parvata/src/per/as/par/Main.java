@@ -11,7 +11,7 @@ public class Main {
 			System.out.println("More information needed. Printing help (--?, --help)");
 			printHelp();
 		} else {
-			pav = new Parvata(args[args.length - 2], args[args.length - 1], args[args.length - 3]);
+			pav = new Parvata("f", args[args.length - 2], args[args.length - 1]);
 			for (int i = 0; i < args.length - 2; i++) {
 				String arg = args[i];
 				switch (arg) {

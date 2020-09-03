@@ -1,0 +1,19 @@
+(P)oll network variable
+Enter NV index (0-4095) [65535] :25
+NV 25: 30 bytes. Hex data: 01 03 31 C4 0A B4 0A B9 0A B6 00 23 00 00 B4 0A 03 14 00 00 23 00 00 3C 03 03 94 00 00 14
+P
+
+(P)oll network variable
+Enter NV index (0-4095) [65535] :24
+NV 24: 16 bytes. Hex data: 0B 90 0B 85 0C CE 08 C0 0B 90 0B 90 0B 90
+P
+
+(P)oll network variable
+Enter NV index (0-4095) [65535] :25
+NV 25: 30 bytes. Hex data: 01 03 31 C4 0A B4 0A B9 0A B6 00 23 00 00 B4 0A 03 14 00 00 23 00 00 3C 03 03 94 00 00 14
+P
+
+(P)oll network variable
+Enter NV index (0-4095) [65535] :24
+NV 24: 16 bytes. Hex data: 0B 91 0B 86 0C CE 08 C0 0B 91 0B 91 0B 91
+P
