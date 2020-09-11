@@ -1,0 +1,50 @@
+General Idea:
+
+Game Setup: 
+  Everyone draws/rolls their two starting items
+  
+  Everyone chooses a starting city
+  
+  Each city starts with two parcels for a random other city
+
+Map:
+	6 Towns/Cities: Plembury (Red), Leewood(Orange), Edmond(Purple), Arkton(Blue), Hayville (Yellow), Vrogan (Green)
+
+	The map is split into three regions with two towns per region.
+	
+	Each town takes up one tile. There are paths between various towns with tiles along the path.
+
+	There are various obstacles along these paths (Rivers, Mountains, etc.) that are classified as rough terrain and require extra movement points to enter.
+
+	Players each occupy one tile at a time, and always occupy a tile.
+
+	Each town has a certain amount of parcels waiting to be picked up by a player. These take the form as a physical piece placed on the board next to the town. Each piece is the color of the town it needs to be delivered to.
+
+	Each player has a turn counter. This is a row of 10 squares with point values inside each square. This is where the player will store their undelivered parcels.
+
+Round: 
+	Every Player should move each parcel in their turn counter forward by one square.
+		(the longer the player holds onto the packages, the less they are worth when delivered)
+
+	Draw/Roll for weather for each region (Sunny, Cloudy, Raining, Snowing, etc.). This affects movement costs (rivers are harder to cross in the rain, mountains harder in the snow, etc.)
+
+	Draw/Roll to generate more parcels within each town
+	
+	Go through each player in order:
+		roll dice for movement points
+		
+		Draw/Roll for obstacle (local weather?, collapsed bridge, river flooding, rockslide, political unrest/riots, robbery, etc.) These mostly just affect movement point cost, and won’t always be relevant (i.e. maybe the local bridge collapsed but you weren’t planning on using that bridge this turn anyway). These obstacles only apply to that player for this round.
+
+		use items/powers (if you have a boat you can cross rivers in the rain at normal speed regardless of bridge condition, snowshoes through mountains at normal speed regardless of snowstorm, climbing gear let’s you ignore rockslides, etc.)  
+		
+		spend movement points as desired
+			move through tiles
+			collect parcels in town
+			deliver parcels in town
+			(enter store in town?)
+		
+		?
+	
+		Next Person
+
+		
