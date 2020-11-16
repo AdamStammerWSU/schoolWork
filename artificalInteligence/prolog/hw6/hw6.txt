@@ -1,0 +1,170 @@
+% ---- CS 445 Homework 6 ----
+% ----   Adam Stammer    ----
+% ---- October 26th,2020 ----
+
+% -----------------question 1
+split([], [], []).
+split([Head|Tail], [Head|L1], L2) :- Head>=0, split(Tail, L1, L2).
+split([Head|Tail], L1, [Head|L2]) :- Head<0, split(Tail, L1, L2).
+
+        %split([1, -2, -3, 4, 5, 6, -7, -8], X, Y).
+        %X = [1, 4, 5, 6],
+        %Y = [-2, -3, -7, -8] .
+
+%----------------- question 2
+max([X],X).
+max([H|T],Max):- max(T,Max), H < Max.
+max([Max|T],Max) :- max(T,M), M < Max.
+
+min([X],X).
+min([H|T],Min):- min(T,Min), H > Min.
+min([Min|T],Min) :- min(T,M), M > Min.
+
+min_max(X, Max, Min) :- max(X, Max), min(X, Min).
+
+        %min_max([8, -2, 5, -6, 2, 3, -1, 0, 9, 4, 1], X, Y).
+        %X = 9,
+        %Y = -6 
+
+%------------------question 3
+is_square(X) :- floor(sqrt(X))^2 =:= X.
+perfect_squares([], [], 0).
+perfect_squares(L1, Squares, C) :- findall(X, (member(X, L1), is_square(X)), Squares), length(Squares,C).
+
+        %perfect_squares([4, 3, 16, 2, 8, 10, 9, 7], X, Y).
+        %X = [4, 16, 9],
+        %Y = 3.
+
+%------------------question 4 -> created a list of the differences, and then summed that list together
+s_c_d_element(X, Y) :- Y is ((X^3) - (X^2)).
+
+list_sum([],0).
+list_sum([Head|Tail], TotalSum) :- list_sum(Tail, Sum1), TotalSum is Head+Sum1.
+
+square_cube_difference([], []).
+square_cube_difference([H|T], N) :- square_cube_difference(T, Y), s_c_d_element(H, D), append([D], [Y], Z), flatten(Z, A), list_sum(A, N).
+
+        %square_cube_difference([1, 2, 3], X).
+        %X = 22.
+
+%------------------question 5
+mean(L, X):- list_sum(L, Sum), length(L,Len), Len > 0, X is Sum / Len.
+
+dist_list([], [], _).
+dist_list([H|T], Dist, Mean) :- dist_list(T, D, Mean), A is (H - Mean)^2, append([A], D, Dist).
+
+variance(L1, X) :- mean(L1, M), dist_list(L1, D1, M), mean(D1, X).
+
+standard_deviation(L1, X) :- variance(L1, V), X is sqrt(V).
+
+        %standard_deviation([600, 470, 170, 430, 300], X).
+        %X = 147.32277488562318.
+
+%------------------question 6
+
+fill_blanks([H],L2) :- member(H,L2).
+fill_blanks([H|T],L2) :- member(H,L2), fill_blanks(T, L2).
+ 
+r1(H1,H2,H3,H4,H5) :-   %american in the red house
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [red,america,_,_,_,_].
+ 
+r2(H1,H2,H3,H4,H5) :-   % spaniard has a dog
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [_,spain,_,_,dog,_].
+ 
+r3(H1,H2,H3,H4,H5) :-   % green house drinks coffee
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [green,_,coffee,_,_,_].
+ 
+r4(H1,H2,H3,H4,H5) :-   % ukrainian drinks tea
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [_,ukraine,tea,_,_,_].
+ 
+r5(H1,H2,H3,H4,H5) :-   % green house is to the right of the ivory house
+    member(HL,[H1,H2,H3,H4,H5]),
+    member(HR,[H1,H2,H3,H4,H5]),
+    HL = [ivory,_,_,_,_,NrL],
+    HR = [green,_,_,_,_,NrR],
+    NrR-NrL =:= 1. %to the right of
+ 
+r6(H1,H2,H3,H4,H5) :-   % snail owner watches succession 
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [_,_,_,succession,snails,_].
+ 
+r7(H1,H2,H3,H4,H5) :-   % yellow house watches westworld
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [yellow,_,_,westworld,_,_].
+ 
+r8(_,_,H3,_,_) :-       % middle house drinks milk
+    H3 = [_,_,milk,_,_,3].
+ 
+r9(H1,_,_,_,_) :-       % left (first) house is norwegian
+    H1 = [_,norway,_,_,_,1].
+ 
+r10(H1,H2,H3,H4,H5) :-  % er watcher and fox owner are next to each other
+    member(HL,[H1,H2,H3,H4,H5]),
+    member(HR,[H1,H2,H3,H4,H5]),
+    HL = [_,_,_,er,_,NrL],
+    HR = [_,_,_,_,fox,NrR],
+    abs(NrL-NrR,1). %next to each other
+ 
+r11(H1,H2,H3,H4,H5) :-  % westworld watcher next to horse owner
+    member(HL,[H1,H2,H3,H4,H5]),
+    member(HR,[H1,H2,H3,H4,H5]),
+    HL = [_,_,_,westworld,_,NrL],
+    HR = [_,_,_,_,horse,NrR],
+    abs(NrL-NrR,1). % next to
+ 
+r12(H1,H2,H3,H4,H5) :-  % orangejuice drinker watches breaking bad
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [_,_,orangejuice,breakingbad,_,_].
+ 
+r13(H1,H2,H3,H4,H5) :-  % japanese watches game of thrones
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [_,japan,_,gameofthrones,_,_].
+ 
+r14(H1,H2,H3,H4,H5) :-  % norwegian is next to blue house
+    member(HL,[H1,H2,H3,H4,H5]),
+    member(HR,[H1,H2,H3,H4,H5]),
+    HL = [_,norway,_,_,_,NrL],
+    HR = [blue,_,_,_,_,NrR],
+    abs(NrL-NrR,1). %next to
+
+solve(H1,H2,H3,H4,H5) :-
+    % setup house variables with structure
+    H1 = [H1_col,H1_nat,H1_drink,H1_show,H1_pet,1],
+    H2 = [H2_col,H2_nat,H2_drink,H2_show,H2_pet,2],
+    H3 = [H3_col,H3_nat,H3_drink,H3_show,H3_pet,3],
+    H4 = [H4_col,H4_nat,H4_drink,H4_show,H4_pet,4],
+    H5 = [H5_col,H5_nat,H5_drink,H5_show,H5_pet,5],
+    % proccess rules
+    r1(H1, H2, H3, H4, H5),
+    r2(H1, H2, H3, H4, H5),
+    r3(H1, H2, H3, H4, H5),
+    r4(H1, H2, H3, H4, H5),
+    r5(H1, H2, H3, H4, H5),
+    r6(H1, H2, H3, H4, H5),
+    r7(H1, H2, H3, H4, H5),
+    r8(H1, H2, H3, H4, H5),
+    r9(H1, H2, H3, H4, H5),
+    r10(H1, H2, H3, H4, H5),
+    r11(H1, H2, H3, H4, H5),
+    r12(H1, H2, H3, H4, H5),
+    r13(H1, H2, H3, H4, H5),
+    r14(H1, H2, H3, H4, H5),
+    % fill in blanks (water and zebra)
+    fill_blanks([ivory, green, red, blue, yellow], [H1_col,H2_col,H3_col,H4_col,H5_col]),
+    fill_blanks([spain, japan, america, ukraine, norway], [H1_nat,H2_nat,H3_nat,H4_nat,H5_nat]),
+    fill_blanks([orangejuice, coffee, milk, tea, water], [H1_drink,H2_drink,H3_drink,H4_drink,H5_drink]),
+    fill_blanks([succession, westworld, er, breakingbad, gameofthrones], [H1_show,H2_show,H3_show,H4_show,H5_show]),
+    fill_blanks([dog, zebra, snails, horse, fox], [H1_pet,H2_pet,H3_pet,H4_pet,H5_pet]).
+
+%------OUTPUT-----------------------------------------------
+%solve(H1, H2, H3, H4, H5).
+%H1 = [yellow, norway, water, westworld, fox, 1],
+%H2 = [blue, ukraine, tea, er, horse, 2],
+%H3 = [red, america, milk, succession, snails, 3],
+%H4 = [ivory, spain, orangejuice, breakingbad, dog, 4],
+%H5 = [green, japan, coffee, gameofthrones, zebra, 5].
+%------OUTPUT-----------------------------------------------

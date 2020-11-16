@@ -1,0 +1,1 @@
+cd('F:/git/schoolWork/artificalInteligence/prolog/hw5').

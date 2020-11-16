@@ -1,4 +1,0 @@
-Test line 1
-testline2
-
-testline4

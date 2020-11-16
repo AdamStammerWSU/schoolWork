@@ -1,0 +1,10 @@
+
+Test 1
+Octave Call:  testScriptForHybrid(f,-2.100e+000,-1.800e+000,1.000e-016)
+True Root:  -2.0000000000000000
+Result: ERROR
+
+Test 2
+Octave Call:  testScriptForHybrid(f,0.000e+000,1.000e+001,1.000e-014)
+True Root:  3.0165390218980477
+Result: ERROR

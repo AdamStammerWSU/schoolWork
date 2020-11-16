@@ -1,0 +1,11 @@
+thing([],[X],X).
+thing([H|T],[H|X],Y) :- H = 1, anything(Y,Z), thing(T,X,Z).
+thing([H|T],[H|X],Y) :- H = 0, nothing(Y,Z), thing(T,X,Z).
+nothing(1,1).
+nothing(0,0).
+anything(1,0).
+anything(0,1).
+
+flattenappend(List1, List2, Result) :- flatten(List1, X), flatten(List2, Y), append(X, Y, Result).
+
+combine(List1, List2, List3, Result) :- reverse(List2, X), append(List1, X, Y), append(Y, List3, Result).

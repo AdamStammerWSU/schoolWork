@@ -1,0 +1,106 @@
+fill_blanks([H],L2) :- member(H,L2).
+fill_blanks([H|T],L2) :- member(H,L2), fill_blanks(T, L2).
+ 
+r1(H1,H2,H3,H4,H5) :-   %american in the red house
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [red,america,_,_,_,_].
+ 
+r2(H1,H2,H3,H4,H5) :-   % spaniard has a dog
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [_,spain,_,_,dog,_].
+ 
+r3(H1,H2,H3,H4,H5) :-   % green house drinks coffee
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [green,_,coffee,_,_,_].
+ 
+r4(H1,H2,H3,H4,H5) :-   % ukrainian drinks tea
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [_,ukraine,tea,_,_,_].
+ 
+r5(H1,H2,H3,H4,H5) :-   % green house is to the right of the ivory house
+    member(HL,[H1,H2,H3,H4,H5]),
+    member(HR,[H1,H2,H3,H4,H5]),
+    HL = [ivory,_,_,_,_,NrL],
+    HR = [green,_,_,_,_,NrR],
+    NrR-NrL =:= 1. %to the right of
+ 
+r6(H1,H2,H3,H4,H5) :-   % snail owner watches succession 
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [_,_,_,succession,snails,_].
+ 
+r7(H1,H2,H3,H4,H5) :-   % yellow house watches westworld
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [yellow,_,_,westworld,_,_].
+ 
+r8(_,_,H3,_,_) :-       % middle house drinks milk
+    H3 = [_,_,milk,_,_,3].
+ 
+r9(H1,_,_,_,_) :-       % left (first) house is norwegian
+    H1 = [_,norway,_,_,_,1].
+ 
+r10(H1,H2,H3,H4,H5) :-  % er watcher and fox owner are next to each other
+    member(HL,[H1,H2,H3,H4,H5]),
+    member(HR,[H1,H2,H3,H4,H5]),
+    HL = [_,_,_,er,_,NrL],
+    HR = [_,_,_,_,fox,NrR],
+    abs(NrL-NrR,1). %next to each other
+ 
+r11(H1,H2,H3,H4,H5) :-  % westworld watcher next to horse owner
+    member(HL,[H1,H2,H3,H4,H5]),
+    member(HR,[H1,H2,H3,H4,H5]),
+    HL = [_,_,_,westworld,_,NrL],
+    HR = [_,_,_,_,horse,NrR],
+    abs(NrL-NrR,1). % next to
+ 
+r12(H1,H2,H3,H4,H5) :-  % orangejuice drinker watches breaking bad
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [_,_,orangejuice,breakingbad,_,_].
+ 
+r13(H1,H2,H3,H4,H5) :-  % japanese watches game of thrones
+    member(H, [H1,H2,H3,H4,H5]),
+    H = [_,japan,_,gameofthrones,_,_].
+ 
+r14(H1,H2,H3,H4,H5) :-  % norwegian is next to blue house
+    member(HL,[H1,H2,H3,H4,H5]),
+    member(HR,[H1,H2,H3,H4,H5]),
+    HL = [_,norway,_,_,_,NrL],
+    HR = [blue,_,_,_,_,NrR],
+    abs(NrL-NrR,1). %next to
+
+solve(H1,H2,H3,H4,H5) :-
+    % setup house variables with structure
+    H1 = [H1_col,H1_nat,H1_drink,H1_show,H1_pet,1],
+    H2 = [H2_col,H2_nat,H2_drink,H2_show,H2_pet,2],
+    H3 = [H3_col,H3_nat,H3_drink,H3_show,H3_pet,3],
+    H4 = [H4_col,H4_nat,H4_drink,H4_show,H4_pet,4],
+    H5 = [H5_col,H5_nat,H5_drink,H5_show,H5_pet,5],
+    % proccess rules
+    r1(H1, H2, H3, H4, H5),
+    r2(H1, H2, H3, H4, H5),
+    r3(H1, H2, H3, H4, H5),
+    r4(H1, H2, H3, H4, H5),
+    r5(H1, H2, H3, H4, H5),
+    r6(H1, H2, H3, H4, H5),
+    r7(H1, H2, H3, H4, H5),
+    r8(H1, H2, H3, H4, H5),
+    r9(H1, H2, H3, H4, H5),
+    r10(H1, H2, H3, H4, H5),
+    r11(H1, H2, H3, H4, H5),
+    r12(H1, H2, H3, H4, H5),
+    r13(H1, H2, H3, H4, H5),
+    r14(H1, H2, H3, H4, H5),
+    % fill in blanks (water and zebra)
+    fill_blanks([ivory, green, red, blue, yellow], [H1_col,H2_col,H3_col,H4_col,H5_col]),
+    fill_blanks([spain, japan, america, ukraine, norway], [H1_nat,H2_nat,H3_nat,H4_nat,H5_nat]),
+    fill_blanks([orangejuice, coffee, milk, tea, water], [H1_drink,H2_drink,H3_drink,H4_drink,H5_drink]),
+    fill_blanks([succession, westworld, er, breakingbad, gameofthrones], [H1_show,H2_show,H3_show,H4_show,H5_show]),
+    fill_blanks([dog, zebra, snails, horse, fox], [H1_pet,H2_pet,H3_pet,H4_pet,H5_pet]).
+
+%------OUTPUT-----------------------------------------------
+%solve(H1, H2, H3, H4, H5).
+%H1 = [yellow, norway, water, westworld, fox, 1],
+%H2 = [blue, ukraine, tea, er, horse, 2],
+%H3 = [red, america, milk, succession, snails, 3],
+%H4 = [ivory, spain, orangejuice, breakingbad, dog, 4],
+%H5 = [green, japan, coffee, gameofthrones, zebra, 5].
+%------OUTPUT-----------------------------------------------
