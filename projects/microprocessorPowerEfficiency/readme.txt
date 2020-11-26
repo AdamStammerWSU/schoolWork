@@ -1,2 +1,2 @@
 Research Project Idea: Compare the power consumption of various algorithms, languages, operations, and or hardware, as applied to microprocessors. Perhaps the ATTiny family would be good a testing platform. 
-Write algorithms in C and Assembly for the microprocessor. Compare timing, energy use, timing, memory use, etc. Compare the assembly code too.
+Write algorithms in C and Assembly for the microprocessor. Compare energy use, timing, memory use, etc. Compare the assembly code too.

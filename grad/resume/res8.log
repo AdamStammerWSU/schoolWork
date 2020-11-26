@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.13)  23 NOV 2020 15:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.13)  24 NOV 2020 12:28
 entering extended mode
 **./res8.tex
 (res8.tex
@@ -73,22 +73,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 42.
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--53
+Overfull \vbox (19.03748pt too high) has occurred while \output is active []
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--82
-
- []
 
 [1
 
 {C:/Users/adamr/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] ) 
 Here is how much of TeX's memory you used:
  616 strings out of 480236
- 9462 string characters out of 2890433
- 278297 words of memory out of 3000000
+ 9459 string characters out of 2890433
+ 279297 words of memory out of 3000000
  17245 multiletter control sequences out of 15000+200000
  536689 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -99,7 +93,7 @@ ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/t
 ype1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmsl10.pfb>
-Output written on res8.pdf (1 page, 67592 bytes).
+Output written on res8.pdf (1 page, 68708 bytes).
 PDF statistics:
  27 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
