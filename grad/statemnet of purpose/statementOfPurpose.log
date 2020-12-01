@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.13)  25 NOV 2020 22:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.13)  30 NOV 2020 23:38
 entering extended mode
 **./statementOfPurpose.tex
 (statementOfPurpose.tex
@@ -117,18 +117,19 @@ LaTeX Font Info:    ... okay on input line 16.
 {C:/Users/adamr/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (statementOfPur
 pose.aux) ) 
 Here is how much of TeX's memory you used:
- 505 strings out of 480236
- 8462 string characters out of 2890433
+ 507 strings out of 480236
+ 8483 string characters out of 2890433
  278401 words of memory out of 3000000
- 17130 multiletter control sequences out of 15000+200000
- 536583 words of font info for 34 fonts, out of 3000000 for 9000
+ 17131 multiletter control sequences out of 15000+200000
+ 536930 words of font info for 35 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,4n,47p,178b,129s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,4n,47p,279b,129s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on statementOfPurpose.pdf (1 page, 35762 bytes).
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program F
+iles/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on statementOfPurpose.pdf (1 page, 46099 bytes).
 PDF statistics:
- 14 PDF objects out of 1000 (max. 8388607)
+ 18 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
