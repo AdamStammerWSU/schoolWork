@@ -1,0 +1,117 @@
+% LaTeX file for resume 
+% This file uses the resume document class (res.cls)
+
+\documentclass{res} 
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\usepackage{url}
+\newsectionwidth{0pt}  % So the text is not indented under section headings
+\usepackage{fancyhdr}  % use this package to get a 2 line header
+\renewcommand{\headrulewidth}{0pt} % suppress line drawn by default by fancyhdr
+\setlength{\headheight}{24pt} % allow room for 2-line header
+\setlength{\headsep}{24pt}  % space between header and text
+\setlength{\headheight}{24pt} % allow room for 2-line header
+\pagestyle{fancy}     % set pagestyle for document
+\rhead{ {\it Z. Zinger}\\{\it p. \thepage} } % put text in header (right side)
+\cfoot{}                                     % the foot is empty
+\topmargin=-1in % start text higher on the page
+
+
+% Center the name over the entire width of resume:
+\moveleft.5\hoffset\centerline{\large\bf Adam R. Stammer}
+% Draw a horizontal line the whole width of resume:
+\moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip
+% address begins here
+% Again, the address lines must be centered over entire width of resume:
+\moveleft.5\hoffset\centerline{328 N Franklin Ave}
+\moveleft.5\hoffset\centerline{Sioux Falls, SD 57103}
+\moveleft.5\hoffset\centerline{(605) 323-5848}
+\moveleft.5\hoffset\centerline{adam.r.stammer@gmail.com}
+
+\begin{document}
+\thispagestyle{empty} % this page has no header  
+%\name{ZELDA ZINGER\\[12pt]}% the \\[12pt] adds a blank line after name
+ %\moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip
+%\address{{\bf School Address} \\ Department of Psychology \\
+%  Rensselaer Polytechnic Institute \\   Troy, NY 12181 \\ (518) 276-6473}      
+                                      
+%\address{{\bf Permanent Address} \\ 72 Trolley Lane \\ Utica, NY 13502\\
+%  (315) 493-8621 }
+
+
+
+\begin{resume}
+ 
+\section{\centerline{OBJECTIVE}}
+\vspace{8pt} % provide vertical space between section title and contents
+The opportunity to grow in a learning environment so that I can apply my knowledge and abilities to help create a better and more sustainable world through the use and development of digital technology.
+ 
+\vspace{0.2in}
+\section{\centerline{EDUCATION}} 
+\vspace{8pt} 
+Winona State University, Winona, MN \hspace{0.2in}   \hfill \url{https://www.winona.edu/} \\
+{\sl Bachelor of Science, Computer Science (Minor: Physics - Electronics)} \hfill GPA 3.53 \\
+\hspace*{\fill} Expected December 2020 
+
+\vspace{0.2in} 
+\section{\centerline{PROFESSIONAL EXPERIENCE}} 
+\vspace{8pt}
+{\sl Research Assistant} 	\hfill		June 2019 - Present \\
+Winona State University, Winona, MN       \hfill   (Mentor: {\sl Dr. Carl Ferkinhoff})
+  
+   	\begin{itemize} \itemsep -2pt % reduce space between items
+   	\item Designed and built the foundations of the Hardware.astronomy Housekeeping Box (H.aHkBox) as to be used with the ZEUS-2 grating spectrometer
+   	\item Learned and developed skills in independent hardware and software research, design, and documentation
+   	\item Presented poster at the 235th AAS meeting (Honolulu, HI)
+   	\item \url{https://github.com/AdamStammerWSU/h.aHKbox}
+ 	\end{itemize}
+ 
+
+{\sl Tutor} 	\hfill 		August 2020 - Present \\
+Winona State University, Winona, MN \hfill Computer Science Department
+
+\begin{itemize} \itemsep -2pt
+	\item  Assisted students with homework assignments and studying
+	\item  Primarily tutored Computer Systems working with Assembly on the PDP-11
+	\item  Gained experience helping others learn and draw conclusions on their own based on existing knowledge
+\end{itemize} \vspace{-6pt} 
+ 
+{\sl Technical Support} 	\hfill 	June - August 2018\\
+Daktronics, Sioux Falls, SD
+
+ \begin{itemize} \itemsep -2pt
+  \item  Remotely aided field technicians in the hardware and network setup and repair of digital billboards
+  \item  Developed remote communication skills with technical and non-technical people
+  \item  Gained experience in reading and communicating operations manuals, part lists, schematics, and other technical documents
+\end{itemize} \vspace{-6pt}
+
+
+
+\vspace{0.2in} 
+\section{\centerline{ COMPUTING SKILLS }}
+\vspace{8pt} 
+Programming Languages: 	 \hfill (Ordered by Current Familiarity) \\
+\hspace*{10mm} \sl{Java, C/C++, Assembly (PDP-11), Python, Octave/Matlab, C\#, Verilog} \\
+Platforms and Tools: \\
+\hspace*{10mm} 	\sl{Arduino, Raspberry Pi, FPGA, Windows, Linux, Git, CircuitMaker, Eclipse IDE, Visual Studio IDE}		
+
+\vspace{0.2in}
+\section{\centerline{INTERESTS/HOBBIES}} 
+\vspace{8pt}
+Cycling, hiking, cooking, gardening, carving, bookbinding, electronics
+ 
+\end{resume} 
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
